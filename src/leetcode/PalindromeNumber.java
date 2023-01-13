@@ -1,14 +1,16 @@
+package leetcode;
+
 public class PalindromeNumber {
 
     public boolean isPalindrome(int x) {
         if(x < 0) return false;
         String string = String.valueOf(x);
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for(int i = string.length() - 1; i >= 0; i--) {
             sb.append(string.charAt(i));
         }
         try {
-            return x == Integer.valueOf(sb.toString());
+            return x == Integer.parseInt(sb.toString());
         } catch (NumberFormatException e) {
             return false;
         }

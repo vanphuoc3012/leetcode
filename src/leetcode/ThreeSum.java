@@ -1,3 +1,5 @@
+package leetcode;
+
 import java.util.*;
 
 public class ThreeSum {
@@ -12,7 +14,7 @@ public class ThreeSum {
 
         for(int i = 0; i < nums.length - 2; i++) {
 
-            int twoSum = 0 - nums[i];
+            int twoSum = -nums[i];
             for (int j = i+1; j < nums.length - 1; j++) {
                 int last = twoSum - nums[j];
                 if(hashset.contains(last)) {
@@ -21,7 +23,7 @@ public class ThreeSum {
                             List<Integer> num = List.of(nums[i], nums[j], nums[k]);
                             boolean duplicatedList = false;
                             for(List<Integer> l : result) {
-                                if(l.containsAll(num) && num.containsAll(l)) {
+                                if(new HashSet<>(l).containsAll(num) && num.containsAll(l)) {
                                     duplicatedList = true;
                                     break;
                                 }

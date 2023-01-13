@@ -1,14 +1,15 @@
+package leetcode;
 
 public class MaximumSubarray {
     public static int maxSubArray(int[] nums) {
         int maxsum = nums[0];
         int curSum = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            if(curSum < 0) {
+        for (int num : nums) {
+            if (curSum < 0) {
                 curSum = 0;
             }
-            curSum += nums[i];
+            curSum += num;
             maxsum = Integer.max(maxsum, curSum);
         }
         return maxsum;

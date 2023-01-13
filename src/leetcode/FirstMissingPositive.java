@@ -1,4 +1,5 @@
-import java.security.Key;
+package leetcode;
+
 import java.util.HashMap;
 import java.util.Map;
 

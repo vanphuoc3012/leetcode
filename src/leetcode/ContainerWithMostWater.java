@@ -1,3 +1,5 @@
+package leetcode;
+
 public class ContainerWithMostWater {
 
     public int maxArea(int[] height) {
@@ -6,12 +8,12 @@ public class ContainerWithMostWater {
 
         int h1 = height[p1];
         int h2 = height[p2];
-        int h = h1 < h2 ? h1 : h2;
+        int h = Math.min(h1, h2);
         int maxWater = (p2 - p1) * h;
         while (p1 < p2) {
             h1 = height[p1];
             h2 = height[p2];
-            h = h1 < h2 ? h1 : h2;
+            h = Math.min(h1, h2);
             if(maxWater < (p2 - p1) * h) maxWater = (p2 - p1) * h;
             if(h1 <= h2) {
                 p1++;
